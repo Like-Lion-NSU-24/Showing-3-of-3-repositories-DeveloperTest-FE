@@ -155,11 +155,6 @@
       overflow: auto;
     }
   
-    .chart {
-      /* 차트 개체에 대한 스타일 설정 */
-      /* 예: height, width, margin 등 */
-    }
-  
     .bar-container {
       order: 1; /* .bar-container를 맨 아래로 이동 */
     }

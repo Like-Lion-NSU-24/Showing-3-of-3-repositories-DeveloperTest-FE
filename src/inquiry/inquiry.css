@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import "./reset.css";
 
 body {
     margin: 0;
@@ -6,8 +7,13 @@ body {
     font-weight: 70px;
     font-style: normal;
     font-size: 24px;
+    height: 100%; /* body 요소에 높이를 100%로 설정 */
+    overflow-y: auto; /* 세로 스크롤을 활성화하여 필요할 때만 스크롤이 나타나도록 설정 */
 }
-
+html {
+    height: 100%; /* HTML 요소에 높이를 100%로 설정 */
+  }
+  
 header, footer {
     background-color: #ffffff;
     color: #000000;
@@ -55,14 +61,8 @@ main {
 
 .input-container label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* 라벨 아래쪽 공백 */
     font-weight: bold;
-}
-
-.input-container input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 .input-container textarea {
@@ -70,7 +70,16 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-top: 5px !important; /* 텍스트 영역 위쪽 공백 */
 }
+
+
+.input-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 
 .email-input {
     width: calc(100% - 65%);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import "./result.css"; // App.css 파일 import
 
-const App = () => {
+const result = () => {
   const [resultData, setResultData] = useState([
     { label: "Front_end", percentage: 30 },
     { label: "Design", percentage: 30 },

@@ -74,51 +74,36 @@ function App() {
   
   return (
     <div className="App">
-      <header>
-        <h1>질문 남겨주세요!!</h1>
-      </header>
-
       <main>
         <section className="question">
-          <h2>질문</h2>
+          <h2>질문 남겨주세요 !</h2>
           <div>
           성향 테스트의 질문도 괜찮고 동아리에 대한 질문도 괜찮아요! <br />
-          편하게 질문해주세요! <br />
-          질문이 없으시다면 넘어가도 좋아요 !
+          편하게 질문해주세요!
         </div>
           <br/>
           <div>
             <form onSubmit={handleSubmitQuestion}>
-            <div className="input-container">
-  <label htmlFor="name">이름:</label>
-          <input type="text" id="name" name="name" value={name} onChange={handleNameChange} className="name-input" placeholder="실명이 아니어도 괜찮습니다!" />
-        </div>
-        <div className="input-container">
-          <label htmlFor="email">이메일 또는 전화번호:</label>
-          <input type="text" id="email" name="email" value={email} onChange={handleEmailChange} className="email-input" placeholder="답변받을 이메일이나 전화번호를 입력해주세요!" />
-        </div>
-        <div className="input-container">
-          <label htmlFor="content">질문 내용:</label>
-          <textarea id="content" name="content" rows="10" value={content} onChange={handleContentChange} className='input-container textarea' placeholder="질문 내용을 입력해주세요!"></textarea>
-        </div>
-        <div className="input-container">
-              <input type="submit" value="질문 등록" className="orange-button" />
-            </div>
 
+              <div className="input-container">
+  <div aria-label="이름">이름</div>
+  <input type="text" id="name" name="name" value={name} onChange={handleNameChange} className="name-input input" placeholder="실명이 아니어도 괜찮습니다!" />
+</div>
+<div className="input-container">
+  <div aria-label="이메일 또는 전화번호">이메일 또는 전화번호</div>
+  <input type="text" id="email" name="email" value={email} onChange={handleEmailChange} className="email-input input" placeholder="답변받을 이메일이나 전화번호를 입력해주세요!" />
+</div>
+<div className="input-container">
+  <div aria-label="질문 내용">질문 내용</div>
+  <textarea id="content" name="content" rows="10" value={content} onChange={handleContentChange} className="content-input input" placeholder="질문 내용을 입력해주세요!"></textarea>
+</div>
+
+              <div className="input-container">
+                <input type="submit" value="질문 등록" className="orange-button" />
+              </div>
             </form>
           </div>
           <div>{submitMessage}</div>
-        </section>
-
-
-
-        <section className="question-list">
-          <h2>질문 목록</h2>
-          <ul>
-            {questions.map((question, index) => (
-              <li key={index}>{question.content}</li> 
-            ))}
-          </ul>
         </section>
       </main>
 
@@ -130,4 +115,4 @@ function App() {
   );
 }
 
-export default inquiry;
+export default App;

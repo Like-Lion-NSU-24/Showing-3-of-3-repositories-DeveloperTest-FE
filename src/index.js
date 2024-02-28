@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 // BrowserRouter를 사용할 수 있도록 라이브러리를 불러온다
 import { BrowserRouter } from "react-router-dom";
-import "./reset.css";
 import reportWebVitals from './reportWebVitals';
 
 

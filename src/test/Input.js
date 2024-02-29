@@ -3,10 +3,15 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../test/Input.css';
+import { useNavigate } from "react-router-dom";
+
 
 const Input = () => {
   const sliderRef = useRef(null);
   const [isLastSlide, setIsLastSlide] = useState(false);
+  const [resultValue, setResultValue] = useState(null);
+  const navigate = useNavigate();
+
 
   const SampleNextArrow = ({ onClick }) => {
     return (
@@ -16,7 +21,7 @@ const Input = () => {
     );
   };
 
-  
+
 
   const SamplePrevArrow = ({ onClick }) => {
     const slider = sliderRef.current;
@@ -45,6 +50,13 @@ const Input = () => {
         setIsLastSlide(false);
       }
     }
+  };
+
+  const handleResultSubmission = () => {
+    const itemValues = document.querySelectorAll('input[name^="답변"]:checked');
+    const result = Array.from(itemValues).reduce((accumulator, currentValue) => accumulator + parseInt(currentValue.value), 0);
+    setResultValue(result);
+    navigate("/result", { state: { value: result } });
   };
 
   const settings = {
@@ -80,6 +92,7 @@ if (choice) { // choice 요소가 존재하는지 확인
 
 var allresult=result+result2+result3+result4+result5+result6+result7;
     alert("답:" +allresult);
+  
 });
   
 }
@@ -184,7 +197,7 @@ var allresult=result+result2+result3+result4+result5+result6+result7;
 
           <input type='radio' value={1} name='답변7' id='rd3-7' className='rd7'></input>
           <label htmlFor='rd3-7' className='lb7'>3. 실패할 확률이 없는 깔끔한 근본 아메리카노</label>
-          <div><a href='./result.js' className='result_choice'>제출</a></div>
+          <button type="button" className="result_choice" onClick={handleResultSubmission}>제출</button>
           </div>
         </div>
       </Slider>

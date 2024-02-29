@@ -4,7 +4,7 @@ import "./inquiry.css";
 import { createRoot } from 'react-dom/client';
 
 
-function App() {
+function Inquiry() {
   const [content, setContent] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [name, setName] = useState('');
@@ -12,19 +12,7 @@ function App() {
   const [submitMessage, setSubmitMessage] = useState('');
   const [questions, setQuestions] = useState([]); 
 
-  useEffect(() => {
-    async function fetchQuestions() {
-      try {
-        const response = await axios.get('http://localhost:8080/api/questions');
-        setQuestions(response.data); 
-      } catch (error) {
-        console.error('질문 목록을 가져오는 데 실패했습니다:', error);
-      }
-    }
-  
-    fetchQuestions(); 
-  
-  }, []); 
+
   
   const handleDesignSupportClick = () => {
     window.open('https://forms.gle/DMoXt3VEBqEivE6U9', '_blank'); 
@@ -73,33 +61,32 @@ function App() {
   
   
   return (
-    <div className="App">
-      <main>
-        <section className="question">
+    <div className="custom-body">
+      <main className="custom-main">
+      <section className="custom-question">
           <h2>질문 남겨주세요 !</h2>
           <div>
-          성향 테스트의 질문도 괜찮고 동아리에 대한 질문도 괜찮아요! <br />
-          편하게 질문해주세요!
+          성향 테스트의 질문도 동아리에 대한 질문도 괜찮아요! <br />
+          편하게 질문해주세요! 지원 링크는 맨 아래에 있습니다 !
         </div>
           <br/>
           <div>
             <form onSubmit={handleSubmitQuestion}>
 
-              <div className="input-container">
-  <div aria-label="이름">이름</div>
-  <input type="text" id="name" name="name" value={name} onChange={handleNameChange} className="name-input input" placeholder="실명이 아니어도 괜찮습니다!" />
-</div>
-<div className="input-container">
-  <div aria-label="이메일 또는 전화번호">이메일 또는 전화번호</div>
-  <input type="text" id="email" name="email" value={email} onChange={handleEmailChange} className="email-input input" placeholder="답변받을 이메일이나 전화번호를 입력해주세요!" />
-</div>
-<div className="input-container">
-  <div aria-label="질문 내용">질문 내용</div>
-  <textarea id="content" name="content" rows="10" value={content} onChange={handleContentChange} className="content-input input" placeholder="질문 내용을 입력해주세요!"></textarea>
-</div>
-
-              <div className="input-container">
-                <input type="submit" value="질문 등록" className="orange-button" />
+            <div className="custom-input-container">
+              <div aria-label="이름">이름</div>
+              <input type="text" id="name" name="name" value={name} onChange={handleNameChange} className="custom-name-input text-input"  placeholder="실명이 아니어도 괜찮습니다!" />
+            </div>
+            <div className="custom-input-container">
+              <div aria-label="이메일 또는 전화번호">이메일 또는 전화번호</div>
+              <input type="text" id="email" name="email" value={email} onChange={handleEmailChange} className="custom-email-input text-input"  placeholder="답변받을 이메일이나 전화번호를 입력해주세요!" />
+            </div>
+            <div className="custom-input-container">
+              <div aria-label="질문 내용">질문 내용</div>
+              <textarea id="content" name="content" rows="10" value={content} onChange={handleContentChange} className="custom-content-input"  placeholder="질문 내용을 입력해주세요!"></textarea>
+            </div>
+            <div className="custom-input-container">
+                <input type="submit" value="질문 등록" className="custom-orange-button" />
               </div>
             </form>
           </div>
@@ -107,7 +94,7 @@ function App() {
         </section>
       </main>
 
-      <footer>
+      <footer className="custom-footer">
         <p><a href="https://forms.gle/qBpKFssmeNsykVij6" target="_blank" rel="noopener noreferrer">프론트엔드, 백엔드 지원하러 가기</a></p>
         <p><a href="https://forms.gle/DMoXt3VEBqEivE6U9" target="_blank" rel="noopener noreferrer">디자인 파트 지원하러 가기</a></p>
       </footer>
@@ -115,4 +102,4 @@ function App() {
   );
 }
 
-export default App;
+export default Inquiry;

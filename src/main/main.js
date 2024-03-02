@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import nsulogo from "./nsulogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import "./main.css";
 const Main = () => {
+  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    const fetchCounter = async () => {
+      try {
+        const Response = await axios.post("/");
+        setCounter(Response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchCounter();
+  }, []);
+
   return (
     <div>
       <div id="content">
@@ -26,6 +41,7 @@ const Main = () => {
           </div>
         </div>
       </div>
+      <div id="visitCounter">방문자수 : {counter}</div>
     </div>
   );
 };

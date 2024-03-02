@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../test/Input.css';
 import { useNavigate } from "react-router-dom";
-
+import axios from 'axios';
 
 const Input = () => {
   const sliderRef = useRef(null);
@@ -94,8 +94,39 @@ var allresult=result+result2+result3+result4+result5+result6+result7;
     alert("답:" +allresult);
   
 });
-  
 }
+
+const handleChoiceClick = () => {
+  const itemValueArray = ['답변1', '답변2', '답변3', '답변4', '답변5', '답변6', '답변7'];
+  let allresult = 0;
+  let isAnyOptionSelected = false;
+
+  itemValueArray.forEach((itemName) => {
+    const selectedValue = document.querySelector(`input[name="${itemName}"]:checked`);
+    if (selectedValue) {
+      allresult += parseInt(selectedValue.value);
+      isAnyOptionSelected = true;
+    }
+  });
+
+  if (isAnyOptionSelected) {
+    axios.post('http://localhost:8080/result/save', { allresult })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('서버로 데이터 전송 중 오류 발생:', error);
+      });
+  } else {
+    alert('질문이 선택되지 않았습니다.');
+  }
+};
+
+var choice = document.querySelector('.result_choice');
+
+if (choice) {
+  choice.addEventListener('click', handleChoiceClick);
+  }
 
   return (
     <form action='post'>

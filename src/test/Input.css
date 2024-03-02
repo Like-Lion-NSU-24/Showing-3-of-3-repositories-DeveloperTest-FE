@@ -159,3 +159,31 @@ input[type="radio"]:hover+label{
   transform: translateX(85%);
 color:black;
 }
+
+@media (max-width : 460px) {
+  .slide .inner p{
+      font-size: 20px;
+  }
+  input[type="radio"]+label{
+    width:240px;
+    height: 50px;
+    font-size: 20px;
+  }
+  button {
+   font-size: 25px;
+  }
+  .slick-dots li button:before {
+    font-size: 10px;
+}
+.result_choice{
+  width: 250px;
+  transform: translateX(0%);
+  margin-top: 2px;
+}
+.num{
+  display: none;
+}
+  };
+  
+  
+

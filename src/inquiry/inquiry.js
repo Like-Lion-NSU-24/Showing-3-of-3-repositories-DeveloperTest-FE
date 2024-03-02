@@ -5,25 +5,13 @@ import { createRoot } from 'react-dom/client';
 
 
 function Inquiry() {
-  const [content, setContent] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [content, setContent] = useState('');
   const [submitMessage, setSubmitMessage] = useState('');
-  const [questions, setQuestions] = useState([]); 
-
-
-  
-  const handleDesignSupportClick = () => {
-    window.open('https://forms.gle/DMoXt3VEBqEivE6U9', '_blank'); 
-  };
 
   const handleContentChange = (event) => {
     setContent(event.target.value);
-  };
-
-  const handlePhoneNumberChange = (event) => {
-    setPhoneNumber(event.target.value);
   };
 
   const handleNameChange = (event) => {
@@ -39,26 +27,29 @@ function Inquiry() {
     
     try {
       const response = await axios.post('http://localhost:8080/form/submit', { 
-        userDetail: {
-          name: name,
-          phoneNumber: phoneNumber,
-          email: email,
-          content: content
+        user: email,
+        userName: name,
+        userDetail: content
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
         }
       });
-  
-      setSubmitMessage('질문이 성공적으로 전송되었습니다.');
+      
+      if (response.status === 200) {
+        setSubmitMessage('질문이 성공적으로 전송되었습니다.');
+      } else {
+        setSubmitMessage('질문 전송 실패했습니다. 다시 시도해주세요.');
+      }
     } catch (error) {
       console.error('질문 전송 실패:', error);
       setSubmitMessage('질문 전송 실패했습니다. 다시 시도해주세요.');
     }
   
-    setContent('');
-    setPhoneNumber('');
+    setEmail('');   
     setName('');
-    setEmail('');
+    setContent('');
   };
-  
   
   return (
     <div className="custom-body">
@@ -71,15 +62,14 @@ function Inquiry() {
         </div>
           <br/>
           <div>
-            <form onSubmit={handleSubmitQuestion}>
-
-            <div className="custom-input-container">
-              <div aria-label="이름">이름</div>
-              <input type="text" id="name" name="name" value={name} onChange={handleNameChange} className="custom-name-input text-input"  placeholder="실명이 아니어도 괜찮습니다!" />
-            </div>
+            <form onSubmit={(event) => handleSubmitQuestion(event)}>
             <div className="custom-input-container">
               <div aria-label="이메일 또는 전화번호">이메일 또는 전화번호</div>
               <input type="text" id="email" name="email" value={email} onChange={handleEmailChange} className="custom-email-input text-input"  placeholder="답변받을 이메일이나 전화번호를 입력해주세요!" />
+            </div>
+            <div className="custom-input-container">
+              <div aria-label="이름">이름</div>
+              <input type="text" id="name" name="name" value={name} onChange={handleNameChange} className="custom-name-input text-input"  placeholder="실명이 아니어도 괜찮습니다!" />
             </div>
             <div className="custom-input-container">
               <div aria-label="질문 내용">질문 내용</div>

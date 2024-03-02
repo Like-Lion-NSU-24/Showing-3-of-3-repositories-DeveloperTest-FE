@@ -9,9 +9,7 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>	{/* App 태그를 BrowserRouter 태그로 감싸준다.  */}
       <App />
     </BrowserRouter>
-  </React.StrictMode>
 );

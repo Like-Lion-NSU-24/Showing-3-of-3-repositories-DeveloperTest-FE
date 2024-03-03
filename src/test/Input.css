@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 *{
-    font-family: "Nanum Pen Script";
+  font-family: "Jua", sans-serif;
     overflow: hidden;
+    
 }
 
-.nanum-pen script-regular {
-    font-family: "Nanum Pen Script", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
   
 .slider-container {
     width: 100%;
@@ -72,9 +74,11 @@ label {
     border-radius: 15px;
     cursor: pointer;
     width:830px;
-    height: 30px;
+    padding:15px 15px;
     line-height: 30px;
     margin-bottom: 20px;
+    font-size: 25px;
+    font-family: "Jua", sans-serif;
 }
   .inner{
     width:60%;
@@ -90,7 +94,7 @@ height: 100vh;
     width:100%;
     z-index: 99;
 }
-
+.inner p{font-family: "Jua", sans-serif;}
 input[type="radio"]:hover+label{
     background-color: rgb(250, 157, 87); 
     color: black; 
@@ -133,6 +137,11 @@ input[type="radio"]:hover+label{
   color: #ffffff;
   border:1px solid black;
 }
+.rd8:checked + .lb8 {
+  background-color: rgb(255, 119, 16);
+  color: #ffffff;
+  border:1px solid black;
+}
 .slide,
 .slick-cloned {
   width: 100%;
@@ -149,7 +158,7 @@ input[type="radio"]:hover+label{
   margin-top: 30px;
   text-decoration: none;
   width:300px;
-  height: 50px;
+  height: 65px;
   background-color: rgb(255, 119, 16);
   border:1px solid #ccc;
   border-radius: 15px;
@@ -158,30 +167,42 @@ input[type="radio"]:hover+label{
   position:absolute;
   transform: translateX(85%);
 color:black;
+font-size: 25px;
+font-family: "Jua", sans-serif;
 }
 
-@media (max-width : 460px) {
+@media (max-width :460px) {
   .slide .inner p{
-      font-size: 20px;
+      font-size: 17px;
+      margin-top:2px;
   }
   input[type="radio"]+label{
-    width:240px;
-    height: 50px;
-    font-size: 20px;
+    width:85%;
+    font-size: 13px;
+    padding:10px 10px;
   }
   button {
    font-size: 25px;
   }
   .slick-dots li button:before {
     font-size: 10px;
+   
 }
-.result_choice{
-  width: 250px;
-  transform: translateX(0%);
-  margin-top: 2px;
+input[type="submit"]{
+  width: 70%;
+  transform: translateX(15%);
+  margin-top: -10px;
+  height: 30px;
+  line-height: 20px;
+  font-size: 15px;
 }
+
 .num{
   display: none;
+}
+
+input[type="radio"]+label.pl1{
+  height: 90px;
 }
   };
   

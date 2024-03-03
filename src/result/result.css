@@ -91,6 +91,34 @@
   list-style: none;
 }
 
+.bar-font {
+  font-size: 70%;
+  font-weight: bold;
+}
+
+.bar-front {
+  background-color: lightblue;
+}
+
+.bar-design {
+  background-color: lightcoral;
+}
+
+.center-line {
+  color: black;
+}
+.bar-back {
+  background-color: lightgray;
+}
+
+.bar-main {
+  margin-left: 45px;
+  border-radius: 10px;
+  width: 360px;
+  height: 40px;
+  border: 1px solid black;
+}
+
 .middle {
   display: flex;
   border: 1px solid;
@@ -179,5 +207,13 @@
   .exp_box {
     width: 350px;
     margin: 0px;
+  }
+
+  .bar-main {
+    margin-left: 0px;
+    border-radius: 10px;
+    width: 280px;
+    height: 40px;
+    border: 1px solid black;
   }
 }

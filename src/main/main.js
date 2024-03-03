@@ -12,7 +12,7 @@ const Main = () => {
   useEffect(() => {
     const fetchCounter = async () => {
       try {
-        const Response = await axios.post("http://localhost:8080/main");
+        const Response = await axios.post("http://115.85.182.23:8080/main");
         setCounter(Response.data);
         console.log(Response.data);
       } catch (error) {

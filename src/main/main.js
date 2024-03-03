@@ -5,18 +5,20 @@ import nsulogo from "./nsulogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import "./main.css";
+import { data } from "jquery";
 const Main = () => {
   const [counter, setCounter] = useState(0);
+  
   useEffect(() => {
     const fetchCounter = async () => {
       try {
-        const Response = await axios.post("/");
+        const Response = await axios.post("http://localhost:8080/main");
         setCounter(Response.data);
+        console.log(Response.data);
       } catch (error) {
         console.error(error);
       }
     };
-
     fetchCounter();
   }, []);
 

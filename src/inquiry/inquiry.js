@@ -26,7 +26,7 @@ function Inquiry() {
     event.preventDefault();
     
     try {
-      const response = await axios.post('http://localhost:8080/form/submit', { 
+      const response = await axios.post('http://115.85.182.23:8080/form/submit', { 
         user: email,
         userName: name,
         userDetail: content

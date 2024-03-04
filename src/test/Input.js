@@ -206,7 +206,7 @@ const handleFormSubmission = (event) => {
   };
   var choice = document.querySelector('.result_choice');
 
-
+  const awsIP = process.env.REACT_APP_BACKEND_URL;
 
 const handleChoiceClick = () => {
   const itemValueArray = ['답변1', '답변2', '답변3', '답변4', '답변5', '답변6', '답변7','답변8'];
@@ -222,7 +222,7 @@ const handleChoiceClick = () => {
   });
 
   if (isAnyOptionSelected) {
-    axios.post('http://localhost:8080/result/save', { allresult })
+    axios.post(`${awsIP}/result/save`, { allresult })
       .then(response => {
         console.log(response.data);
       })

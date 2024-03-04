@@ -10,6 +10,8 @@ function Inquiry() {
   const [content, setContent] = useState('');
   const [submitMessage, setSubmitMessage] = useState('');
 
+  const awsIP = process.env.REACT_APP_BACKEND_URL;
+
   const handleContentChange = (event) => {
     setContent(event.target.value);
   };
@@ -26,7 +28,7 @@ function Inquiry() {
     event.preventDefault();
     
     try {
-      const response = await axios.post('http://115.85.182.23:8080/form/submit', { 
+      const response = await axios.post(`${awsIP}/form/submit`, { 
         user: email,
         userName: name,
         userDetail: content

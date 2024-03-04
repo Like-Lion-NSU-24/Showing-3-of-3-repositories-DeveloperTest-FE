@@ -222,7 +222,8 @@ const handleChoiceClick = () => {
   });
 
   if (isAnyOptionSelected) {
-    axios.post(`${awsIP}/result/save`, { allresult })
+    const result = { personalityNumber: allresult };
+    axios.post(`${awsIP}/result/save`, result)
       .then(response => {
         console.log(response.data);
       })

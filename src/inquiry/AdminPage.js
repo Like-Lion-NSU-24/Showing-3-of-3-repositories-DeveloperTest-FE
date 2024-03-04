@@ -4,9 +4,11 @@ import axios from 'axios';
 const AdminQuestionList = () => {
   const [questions, setQuestions] = useState([]);
 
+  const awsIP = process.env.REACT_APP_BACKEND_URL;
+
   useEffect(() => {
     // 질문 목록을 가져오는 요청을 보냅니다.
-    axios.get('http://115.85.182.23:8080/admin/question-forms')
+    axios.get(`${awsIP}/admin/question-forms`)
       .then(response => {
         setQuestions(response.data);
       })
@@ -48,7 +50,7 @@ const AdminQuestionDetail = ({ match }) => {
 
   useEffect(() => {
     // 특정 질문의 상세 정보를 가져오는 요청을 보냅니다.
-    axios.get(`http://115.85.182.23:8080/admin/question-forms/${questionId}`)
+    axios.get(`${awsIP}/admin/question-forms/${questionId}`)
       .then(response => {
         setQuestion(response.data);
       })

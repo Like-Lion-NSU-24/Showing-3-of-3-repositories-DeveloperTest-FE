@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div>
       <div id="header">
-        <img src={logo} alt="로고" id="logo" />
+        <a href="https://developer-teest.vercel.app/"><img src={logo} alt="로고" id="logo" /></a>
       </div>
       <div id="mainLine" />
     </div>

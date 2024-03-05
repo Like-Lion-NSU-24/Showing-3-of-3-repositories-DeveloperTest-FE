@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./AdminPage.css"; 
+
 
 const awsIP = process.env.REACT_APP_BACKEND_URL;
 

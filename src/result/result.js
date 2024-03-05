@@ -20,8 +20,14 @@ const Result = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+<<<<<<< HEAD
         const response = await axios.get("/api/getResultData");
         setResultData(response.data);
+=======
+        
+        const response = await axios.get("/api/getResultData"); 
+        setResultData(response.data); 
+>>>>>>> 1c983c79b6d9aea54234bbb46ea9c8c3d64d97a9
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -46,7 +52,11 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
+<<<<<<< HEAD
                   <img className="photo" src="" alt="Front.png" />
+=======
+                  <img className="photo" src="/img/front.jpg" alt="Front.png" />
+>>>>>>> 1c983c79b6d9aea54234bbb46ea9c8c3d64d97a9
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>
@@ -96,7 +106,11 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
+<<<<<<< HEAD
                   <img className="photo" src="" alt="컴퓨터 사진" />
+=======
+                  <img className="photo" src="/img/Design.jpg" alt="컴퓨터 사진" />
+>>>>>>> 1c983c79b6d9aea54234bbb46ea9c8c3d64d97a9
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>
@@ -146,7 +160,11 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
+<<<<<<< HEAD
                   <img className="photo" src="" alt="컴퓨터 사진" />
+=======
+                  <img className="photo" src="/img/Backend.jpg" alt="컴퓨터 사진" />
+>>>>>>> 1c983c79b6d9aea54234bbb46ea9c8c3d64d97a9
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>

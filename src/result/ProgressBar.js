@@ -23,4 +23,8 @@ const ProgressBar = ({ resultData }) => {
   );
 };
 
+<<<<<<< HEAD
 export default ProgressBar;
+=======
+export default ProgressBar;
+>>>>>>> 1c983c79b6d9aea54234bbb46ea9c8c3d64d97a9

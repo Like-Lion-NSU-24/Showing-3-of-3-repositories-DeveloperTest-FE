@@ -245,7 +245,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+<<<<<<< HEAD
     margin-left: 10px;
+=======
+>>>>>>> 1c983c79b6d9aea54234bbb46ea9c8c3d64d97a9
   }
   .progress-row {
     display: flex;

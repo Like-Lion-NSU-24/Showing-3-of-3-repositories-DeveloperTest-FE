@@ -332,15 +332,15 @@ if (choice) {
 
         <div className="slide">
         <div className='inner'>
-        <p>7. 분위기 좋은 카페에 갔습니다. 무슨 음료를 시킬건가요?</p>
+        <p>7. 누군가를 위한 깜짝 파티를 준비할 때 가장 중요하다고 생각하는 것은?</p>
           <input type='radio' value={-1} name='답변7' id='rd1-7' className='rd7'></input>
-          <label htmlFor='rd1-7' className='lb7'><span className='num'>1.</span> 맛은 잘 모르겠지만 도전해보고 싶게 생긴 신비한 느낌의 카페 시그니쳐</label>
+          <label htmlFor='rd1-7' className='lb7'><span className='num'>1.</span> 서프라이즈에 선물을 빼먹을 순 없다! 선물이 가장 중요!</label>
 
           <input type='radio' value={0} name='답변7' id='rd2-7' className='rd7'></input>
-          <label htmlFor='rd2-7' className='lb7'><span className='num'>2.</span> 카페 주인이 공들여 플레이팅한 이쁜 프라페</label>
+          <label htmlFor='rd2-7' className='lb7'><span className='num'>2.</span> 맛있는 음식, 선물보단 파티 장소 꾸미기다!</label>
 
           <input type='radio' value={1} name='답변7' id='rd3-7' className='rd7'></input>
-          <label htmlFor='rd3-7' className='lb7'><span className='num'>3.</span> 실패할 확률이 없는 깔끔한 근본 아메리카노</label>
+          <label htmlFor='rd3-7' className='lb7'><span className='num'>3.</span> 가장 중요한 건 어떤 방법으로 놀라게 해 주냐이다!</label>
          
           </div>
         </div>

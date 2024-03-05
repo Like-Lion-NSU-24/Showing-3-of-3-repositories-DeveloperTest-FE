@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const awsIP = process.env.REACT_APP_BACKEND_URL;
+
 const AdminQuestionList = () => {
   const [questions, setQuestions] = useState([]);
 
-  const awsIP = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     // 질문 목록을 가져오는 요청을 보냅니다.
@@ -23,10 +24,10 @@ const AdminQuestionList = () => {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>사용자</th>
-            <th>사용자 이름</th>
-            <th>사용자 상세 정보</th>
+            <th>ID </th>
+            <th>사용자 </th>
+            <th>이름 </th>
+            <th>상세 정보 </th>
           </tr>
         </thead>
         <tbody>

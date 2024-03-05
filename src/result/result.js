@@ -28,6 +28,7 @@ const Result = (props) => {
       }
     };
 
+<<<<<<< HEAD
     fetchData(); // fetchData 함수 호출
   }, []);
 
@@ -35,6 +36,13 @@ const Result = (props) => {
     (acc, data) => acc + data.percentage,
     0
   );
+=======
+  const totalPercentage = resultData.reduce(
+    (acc, data) => acc + data.percentage,
+    0
+  );
+
+>>>>>>> ecdb7a54ff64c740f74252557cb0104340d3c227
 
   return (
     <div className="App">
@@ -47,7 +55,11 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
+<<<<<<< HEAD
                   <img className="photo" src="" alt="Front.png" />
+=======
+                  <img className="photo" src="/img/front.png" alt="img/Front.png" />
+>>>>>>> ecdb7a54ff64c740f74252557cb0104340d3c227
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>
@@ -97,7 +109,11 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
+<<<<<<< HEAD
                   <img className="photo" src="" alt="컴퓨터 사진" />
+=======
+                  <img className="photo" src="/img/Design.png" alt="컴퓨터 사진" />
+>>>>>>> ecdb7a54ff64c740f74252557cb0104340d3c227
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>
@@ -147,7 +163,11 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
+<<<<<<< HEAD
                   <img className="photo" src="" alt="컴퓨터 사진" />
+=======
+                  <img className="photo" src="/img/Backend.jpg" alt="컴퓨터 사진" />
+>>>>>>> ecdb7a54ff64c740f74252557cb0104340d3c227
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>

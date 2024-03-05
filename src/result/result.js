@@ -20,15 +20,14 @@ const Result = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // 백엔드에서 데이터를 가져오는 비동기 함수 (예: axios.get 등)
-        const response = await axios.get("/api/getResultData"); // 실제 백엔드 API 주소로 변경
-        setResultData(response.data); // 백엔드에서 받아온 데이터로 resultData 상태 업데이트
+        
+        const response = await axios.get("/api/getResultData"); 
+        setResultData(response.data); 
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
-<<<<<<< HEAD
     fetchData(); // fetchData 함수 호출
   }, []);
 
@@ -36,13 +35,6 @@ const Result = (props) => {
     (acc, data) => acc + data.percentage,
     0
   );
-=======
-  const totalPercentage = resultData.reduce(
-    (acc, data) => acc + data.percentage,
-    0
-  );
-
->>>>>>> ecdb7a54ff64c740f74252557cb0104340d3c227
 
   return (
     <div className="App">
@@ -55,11 +47,7 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
-<<<<<<< HEAD
-                  <img className="photo" src="" alt="Front.png" />
-=======
-                  <img className="photo" src="/img/front.png" alt="img/Front.png" />
->>>>>>> ecdb7a54ff64c740f74252557cb0104340d3c227
+                  <img className="photo" src="/img/front.jpg" alt="Front.png" />
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>
@@ -109,11 +97,7 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
-<<<<<<< HEAD
-                  <img className="photo" src="" alt="컴퓨터 사진" />
-=======
-                  <img className="photo" src="/img/Design.png" alt="컴퓨터 사진" />
->>>>>>> ecdb7a54ff64c740f74252557cb0104340d3c227
+                  <img className="photo" src="/img/Design.jpg" alt="컴퓨터 사진" />
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>
@@ -163,11 +147,7 @@ const Result = (props) => {
             <div className="middle">
               <div className="photo_guard">
                 <div className="only_photo">
-<<<<<<< HEAD
-                  <img className="photo" src="" alt="컴퓨터 사진" />
-=======
                   <img className="photo" src="/img/Backend.jpg" alt="컴퓨터 사진" />
->>>>>>> ecdb7a54ff64c740f74252557cb0104340d3c227
                 </div>
                 <ProgressBar resultData={resultData} />
                 <div className="bar-main"></div>
